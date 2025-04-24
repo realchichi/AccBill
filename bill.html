@@ -254,11 +254,11 @@
         <thead>
           <tr>
             <th style="width: 18%;">รายการ</th>
-            <th style="width: 12%;">จน.(ลัง)</th>
-            <th style="width: 12%;">นน./ลัง (กก.)</th>
-            <th style="width: 12%;">นน.รวม (กก.)</th>
-            <th style="width: 12%;">ราคา/กก. (บาท)</th>
-            <th style="width: 12%;" class="amount-column">จน.เงิน (บาท)</th>
+            <th style="width: 12%;">จน.ลัง</th>
+            <th style="width: 12%;">นน./ลัง(กก.)</th>
+            <th style="width: 12%;">นน.รวม(กก.)</th>
+            <th style="width: 12%;">ราคา/กก.(บาท)</th>
+            <th style="width: 12%;" class="amount-column">จน.เงิน(บาท)</th>
           </tr>
         </thead>
         <tbody id="items-body">
@@ -435,8 +435,8 @@
         
         html2canvas(element, { scale: 2 }).then(canvas => {
           const link = document.createElement('a');
-          link.download = `ใบเสร็จ-${document.getElementById('invoice-number').textContent}.png`;
           link.href = canvas.toDataURL('image/png');
+          link.download = `ใบเสร็จ_${new Date().toISOString().slice(0,10)}.png`;
           link.click();
         });
       });
